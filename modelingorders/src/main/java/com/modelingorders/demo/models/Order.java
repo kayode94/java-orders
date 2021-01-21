@@ -18,7 +18,9 @@ public class Order
 
     //Many orders to many types of payment relationship
     @ManyToMany
-    @JoinTable(name = "orderspayments", joinColumns = @JoinColumn(name ="ordernum"), inverseJoinColumns = @JoinColumn(name = "paymentid"))
+    @JoinTable(name = "orderspayments",
+            joinColumns = @JoinColumn(name ="ordernum"),
+            inverseJoinColumns = @JoinColumn(name = "paymentid"))
     Set<Payment>payments = new HashSet<>();
 
     //Many orders to one customer relationship
@@ -31,7 +33,7 @@ public class Order
         //default constructor
     }
 
-    public Order(double orderamt, double advanceamt, String orderdescription, Customer customer) {
+    public Order(double orderamt, double advanceamt, Customer customer, String orderdescription) {
         this.orderamt = orderamt;
         this.advanceamt = advanceamt;
         this.orderdescription = orderdescription;

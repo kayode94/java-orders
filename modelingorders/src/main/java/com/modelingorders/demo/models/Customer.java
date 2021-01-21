@@ -15,7 +15,7 @@ public class Customer
     @Column(nullable = false)
     private String custname;
 
-    private String workingare;
+    private String workingarea;
 
     private String custcountry;
 
@@ -40,17 +40,19 @@ public class Customer
     //One customer to many orders relationship
     //you dont have to pass orders because it is a List
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Order> order = new ArrayList<>();
+    private List<Order> orders = new ArrayList<>();
+
+
 
     public Customer()
     {
         //default constructor
     }
 
-    public Customer(String custname, String workingare, String custcountry, String grade, double openingamt, double receiveamt, double paymentamt, double outstandingamt, String phone, Agent agent)
+    public Customer( String custname, String custcity, String workingarea, String custcountry, String grade, double openingamt, double receiveamt, double paymentamt, double outstandingamt, String phone, Agent agent)
     {
         this.custname = custname;
-        this.workingare = workingare;
+        this.workingarea = workingarea;
         this.custcountry = custcountry;
         this.grade = grade;
         this.openingamt = openingamt;
@@ -78,11 +80,11 @@ public class Customer
     }
 
     public String getWorkingare() {
-        return workingare;
+        return workingarea;
     }
 
     public void setWorkingare(String workingare) {
-        this.workingare = workingare;
+        this.workingarea = workingare;
     }
 
     public String getCustcountry() {
@@ -150,10 +152,10 @@ public class Customer
     }
 
     public List<Order> getOrder() {
-        return order;
+        return orders;
     }
 
     public void setOrder(List<Order> order) {
-        this.order = order;
+        this.orders = order;
     }
 }

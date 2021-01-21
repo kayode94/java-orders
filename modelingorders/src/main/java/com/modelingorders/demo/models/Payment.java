@@ -3,7 +3,6 @@ package com.modelingorders.demo.models;
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
-
 @Entity
 @Table(name ="payments")
 public class Payment
@@ -53,3 +52,4 @@ public class Payment
         this.orders = orders;
     }
 }
+

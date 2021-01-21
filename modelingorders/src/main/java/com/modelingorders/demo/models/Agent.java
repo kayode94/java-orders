@@ -33,9 +33,8 @@ public class Agent
         // default constructor
     }
 
-    public Agent(long agentcode, String agentname, String workingarea, double commission, String phone, String country)
+    public Agent(String agentname, String workingarea, double commission, String phone, String country)
     {
-        this.agentcode = agentcode;
         this.agentname = agentname;
         this.workingarea = workingarea;
         this.commission = commission;
