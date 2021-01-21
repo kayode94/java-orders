@@ -1,14 +1,14 @@
-package com.lambdaschool.orders;
+package com.modelingorders.demo;
 
 import com.github.javafaker.Faker;
-import com.lambdaschool.orders.models.Agent;
-import com.lambdaschool.orders.models.Customer;
-import com.lambdaschool.orders.models.Order;
-import com.lambdaschool.orders.models.Payment;
-import com.lambdaschool.orders.repositories.AgentsRepository;
-import com.lambdaschool.orders.repositories.CustomersRepository;
-import com.lambdaschool.orders.repositories.OrdersRepository;
-import com.lambdaschool.orders.repositories.PaymentRepository;
+import com.modelingorders.demo.models.Agent;
+import com.modelingorders.demo.models.Customer;
+import com.modelingorders.demo.models.Order;
+import com.modelingorders.demo.models.Payment;
+import com.modelingorders.demo.repositories.AgentsRepository;
+import com.modelingorders.demo.repositories.CustomersRepository;
+import com.modelingorders.demo.repositories.OrdersRepository;
+import com.modelingorders.demo.repositories.PaymentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -623,7 +623,7 @@ public class SeedData
                                            tempGetOrderdescription);
 
                 newOrder.getPayments().add(pay1);
-                fakeCustomer.getOrders()
+                fakeCustomer.getOrder()
                         .add(newOrder);
             }
 
